@@ -1,0 +1,8 @@
+prefix=/home/wolf/Mechanical_Practice/catkin_ws/devel
+
+Name: moveit_ik_plugin_pkg
+Description: Description of moveit_ik_plugin_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/wolf/Mechanical_Practice/catkin_ws/devel/lib 
+Requires: 

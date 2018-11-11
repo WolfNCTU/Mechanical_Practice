@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+
+<!--              robot_parameters.xacro              -->
+<!-- This document describes the names and parameters -->
+<!--        Machenical Practice Testing Version       -->
+<!--             Last editted: 11/01, 2018            -->
+<!--                 Editor: Wolf Chen                -->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Names Description -->
+  <xacro:property name="l0b" value="base_link"/>
+  <xacro:property name="l01" value="link_01"/>
+  <xacro:property name="l02" value="link_02"/>
+  <xacro:property name="l0h" value="head_link"/>
+  <xacro:property name="m0b" value="base_motor"/>
+
+  <!-- True Names of Motors Description -->
+  <xacro:property name="ground_motor_name" value="MG996R"/>
+  <xacro:property name="base_motor_name" value="ARS-3216HTG+HV"/>
+  <xacro:property name="body_motor_name" value="QDS-15RO"/>
+
+  <!-- Appearances Description -->
+  <xacro:property name="base_r" value="0.65"/>
+  <xacro:property name="base_l" value="0.75"/>
+  <xacro:property name="body_w" value="0.45"/>
+  <xacro:property name="body_l" value="0.50"/>
+  <xacro:property name="body_h" value="2.15"/>
+  <xacro:property name="head_w" value="1.30"/>
+  <xacro:property name="head_l" value="1.20"/>
+  <xacro:property name="head_h" value="2.40"/>
+
+  <!-- Motors Description -->
+  <xacro:property name="basem_w" value="0.35"/>
+  <xacro:property name="basem_l" value="0.40"/>
+  <xacro:property name="basem_h" value="0.38"/>
+
+  <!-- Shape Origins Description -->
+  <xacro:property name="base_z" value="0.375"/>
+  <xacro:property name="basem_z" value="0.19"/>
+  <xacro:property name="body_z" value="1.075"/>
+  <xacro:property name="head_x" value="-0.65"/>
+
+  <!-- Physical Values Description -->
+  <xacro:property name="base_mass" value="999"/>
+  <xacro:property name="basem_mass" value="1"/>
+  <xacro:property name="body_mass" value="2"/>
+  <xacro:property name="head_mass" value="5"/>
+
+</robot>

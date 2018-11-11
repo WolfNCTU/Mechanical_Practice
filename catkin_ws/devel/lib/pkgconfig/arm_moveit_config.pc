@@ -1,0 +1,8 @@
+prefix=/home/wolf/Mechanical_Practice/catkin_ws/devel
+
+Name: arm_moveit_config
+Description: Description of arm_moveit_config
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/wolf/Mechanical_Practice/catkin_ws/devel/lib 
+Requires: 

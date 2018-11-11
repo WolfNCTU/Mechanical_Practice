@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+
+<!--                arm.xacro                -->
+<!-- This document describes the robot model -->
+<!--   Machenical Practice Testing Version   -->
+<!--        Last editted: 11/01, 2018        -->
+<!--            Editor: Wolf Chen            -->
+
+<robot name="arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- BGN - Include -->
+  <xacro:include filename="$(find arm_description)/urdf/links_joints.xacro"/>
+  <xacro:include filename="$(find arm_description)/urdf/robot_parameters.xacro"/>
+  <!-- END - Include -->   
+
+  <!-- BGN - Robot Description -->
+
+  <arm_cylinder name="${l0b}"
+                mass="${base_mass}"
+                origin_rpy="0 0 0" origin_xyz="0 0 ${base_z}"
+                ixx="1" ixy="0" ixz="0"
+                iyy="1" iyz="0"
+                izz="1"
+                radius="${base_r}" length="${base_l}"/>
+
+  <arm_joint name="${l0b}_to_${m0b}" type="revolute"
+             axis_xyz="0 0 1"
+             limit_angle="1.57"
+             origin_rpy="0 0 0" origin_xyz="0 0 ${base_l}"
+             parent="${l0b}"
+             child="${m0b}"/>
+
+  <arm_box name="${m0b}"
+           mass="${basem_mass}"
+           origin_rpy="0 0 0" origin_xyz="0 0 ${basem_z}"
+           ixx="1" ixy="0" ixz="0"
+           iyy="1" iyz="0"
+           izz="1"
+           size="${basem_w} ${basem_l} ${basem_h}"/>
+
+  <arm_joint name="${m0b}_to_${l01}" type="revolute"
+             axis_xyz="0 1 0"
+             limit_angle="1.57"
+             origin_rpy="0 0 0" origin_xyz="0 0 ${basem_h}"
+             parent="${m0b}"
+             child="${l01}"/>
+
+  <arm_box name="${l01}"
+           mass="${body_mass}"
+           origin_rpy="0 0 0" origin_xyz="0 0 ${body_z}"
+           ixx="1" ixy="0" ixz="0"
+           iyy="1" iyz="0"
+           izz="1"
+           size="${body_w} ${body_l} ${body_h}"/>
+
+  <arm_joint name="${l01}_to_${l02}" type="revolute"
+             axis_xyz="0 1 0"
+             limit_angle="1.57"
+             origin_rpy="0 0 0" origin_xyz="0 0 ${body_h}"
+             parent="${l01}"
+             child="${l02}"/>
+
+  <arm_box name="${l02}"
+           mass="${body_mass}"
+           origin_rpy="0 0 0" origin_xyz="0 0 ${body_z}"
+           ixx="1" ixy="0" ixz="0"
+           iyy="1" iyz="0"
+           izz="1"
+           size="${body_w} ${body_l} ${body_h}"/>
+
+  <arm_joint name="${l02}_to_${l0h}" type="revolute"
+             axis_xyz="0 1 0"
+             limit_angle="0.785"
+             origin_rpy="0 1.57 0" origin_xyz="0 0 ${body_h}"
+             parent="${l02}"
+             child="${l0h}"/>
+
+  <arm_box name="${l0h}"
+           mass="${head_mass}"
+           origin_rpy="0 0 0" origin_xyz="${head_x} 0 0"
+           ixx="1" ixy="0" ixz="0"
+           iyy="1" iyz="0"
+           izz="1"
+           size="${head_w} ${head_l} ${head_h}"/>
+
+  <!-- END - Robot Description -->
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    </plugin>
+  </gazebo>
+
+</robot>
+

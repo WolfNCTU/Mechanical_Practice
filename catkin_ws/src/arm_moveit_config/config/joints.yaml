@@ -1,0 +1,32 @@
+# Publish all joint states ------------------------
+
+###                joints.yaml               ###
+### This document describes the motor models ###
+###    Machenical Practice Testing Version   ###
+###         Last editted: 11/01, 2018        ###
+###             Editor: Wolf Chen            ###
+
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+# Position Controllers ----------------------------
+ground_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: base_link_to_base_motor
+  pid: {p: 700.0, i: 50, d: 70.0}
+
+base_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: base_motor_to_link_01
+  pid: {p: 700.0, i: 50, d: 70.0}
+
+arm_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: link_01_to_link_02
+  pid: {p: 700.0, i: 50, d: 70.0}
+
+head_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: link_02_to_head_link
+  pid: {p: 700.0, i: 50, d: 70.0}

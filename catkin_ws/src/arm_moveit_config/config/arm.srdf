@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+
+<robot name="arm">
+
+  <!-- BGN - Include -->
+    <xacro:include filename="$(find arm_description)/urdf/robot_parameters.xacro"/>
+  <!-- END - Include -->
+
+  <group name="manipulator">
+    <chain base_link=""
