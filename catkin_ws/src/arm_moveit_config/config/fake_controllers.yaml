@@ -1,0 +1,15 @@
+controller_list:
+  - name: fake_arm_body_controller
+    joints:
+      - base_joint
+      - shoulder_joint
+      - elbow_joint
+      - wrist_joint
+  - name: fake_end_effector_controller
+    joints:
+      - drill_motor_joint
+      - drill_motor_axis_joint
+      - turntable_joint
+      - big_drill_joint
+      - screwdriver_joint
+      - small_drill_joint

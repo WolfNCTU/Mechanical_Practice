@@ -1,10 +1,103 @@
 <?xml version="1.0" ?>
-
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
 <robot name="arm">
-
-  <!-- BGN - Include -->
-    <xacro:include filename="$(find arm_description)/urdf/robot_parameters.xacro"/>
-  <!-- END - Include -->
-
-  <group name="manipulator">
-    <chain base_link=""
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="arm_body">
+        <joint name="virtual_joint" />
+        <joint name="base_joint" />
+        <joint name="shoulder_joint" />
+        <joint name="elbow_joint" />
+        <joint name="wrist_joint" />
+        <joint name="ending_tube_position_joint" />
+    </group>
+    <group name="end_effector">
+        <link name="drill_motor" />
+        <link name="EE_drill_motor_axis" />
+        <link name="EE_turntable" />
+        <link name="EE_drill_big" />
+        <link name="EE_screwdriver" />
+        <link name="EE_drill_small" />
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="Home" group="arm_body">
+        <joint name="base_joint" value="0" />
+        <joint name="elbow_joint" value="0" />
+        <joint name="shoulder_joint" value="0" />
+        <joint name="wrist_joint" value="0" />
+    </group_state>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="end_effector" parent_link="head_link" group="end_effector" />
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="base_link" />
+    <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
+    <passive_joint name="big_drill_joint" />
+    <passive_joint name="screwdriver_joint" />
+    <passive_joint name="small_drill_joint" />
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="EE_drill_big" link2="EE_drill_small" reason="Never" />
+    <disable_collisions link1="EE_drill_big" link2="EE_screwdriver" reason="Never" />
+    <disable_collisions link1="EE_drill_big" link2="EE_turntable" reason="Adjacent" />
+    <disable_collisions link1="EE_drill_big" link2="base_link" reason="Never" />
+    <disable_collisions link1="EE_drill_big" link2="base_motor" reason="Never" />
+    <disable_collisions link1="EE_drill_big" link2="drill_motor" reason="Never" />
+    <disable_collisions link1="EE_drill_big" link2="head_link" reason="Default" />
+    <disable_collisions link1="EE_drill_big" link2="link_01" reason="Never" />
+    <disable_collisions link1="EE_drill_big" link2="link_02" reason="Never" />
+    <disable_collisions link1="EE_drill_motor_axis" link2="EE_ending_tube" reason="Never" />
+    <disable_collisions link1="EE_drill_motor_axis" link2="EE_turntable" reason="Default" />
+    <disable_collisions link1="EE_drill_motor_axis" link2="base_link" reason="Never" />
+    <disable_collisions link1="EE_drill_motor_axis" link2="base_motor" reason="Never" />
+    <disable_collisions link1="EE_drill_motor_axis" link2="drill_motor" reason="Adjacent" />
+    <disable_collisions link1="EE_drill_motor_axis" link2="head_link" reason="Default" />
+    <disable_collisions link1="EE_drill_motor_axis" link2="link_01" reason="Never" />
+    <disable_collisions link1="EE_drill_motor_axis" link2="link_02" reason="Never" />
+    <disable_collisions link1="EE_drill_small" link2="EE_screwdriver" reason="Never" />
+    <disable_collisions link1="EE_drill_small" link2="EE_turntable" reason="Adjacent" />
+    <disable_collisions link1="EE_drill_small" link2="base_link" reason="Never" />
+    <disable_collisions link1="EE_drill_small" link2="base_motor" reason="Never" />
+    <disable_collisions link1="EE_drill_small" link2="drill_motor" reason="Never" />
+    <disable_collisions link1="EE_drill_small" link2="head_link" reason="Default" />
+    <disable_collisions link1="EE_drill_small" link2="link_01" reason="Never" />
+    <disable_collisions link1="EE_drill_small" link2="link_02" reason="Never" />
+    <disable_collisions link1="EE_ending_tube" link2="EE_turntable" reason="Never" />
+    <disable_collisions link1="EE_ending_tube" link2="base_link" reason="Never" />
+    <disable_collisions link1="EE_ending_tube" link2="base_motor" reason="Never" />
+    <disable_collisions link1="EE_ending_tube" link2="drill_motor" reason="Never" />
+    <disable_collisions link1="EE_ending_tube" link2="head_link" reason="Adjacent" />
+    <disable_collisions link1="EE_ending_tube" link2="link_01" reason="Never" />
+    <disable_collisions link1="EE_ending_tube" link2="link_02" reason="Never" />
+    <disable_collisions link1="EE_screwdriver" link2="EE_turntable" reason="Adjacent" />
+    <disable_collisions link1="EE_screwdriver" link2="base_link" reason="Never" />
+    <disable_collisions link1="EE_screwdriver" link2="base_motor" reason="Never" />
+    <disable_collisions link1="EE_screwdriver" link2="drill_motor" reason="Never" />
+    <disable_collisions link1="EE_screwdriver" link2="head_link" reason="Default" />
+    <disable_collisions link1="EE_screwdriver" link2="link_01" reason="Never" />
+    <disable_collisions link1="EE_screwdriver" link2="link_02" reason="Never" />
+    <disable_collisions link1="EE_turntable" link2="base_link" reason="Never" />
+    <disable_collisions link1="EE_turntable" link2="base_motor" reason="Never" />
+    <disable_collisions link1="EE_turntable" link2="drill_motor" reason="Never" />
+    <disable_collisions link1="EE_turntable" link2="head_link" reason="Adjacent" />
+    <disable_collisions link1="EE_turntable" link2="link_01" reason="Never" />
+    <disable_collisions link1="EE_turntable" link2="link_02" reason="Never" />
+    <disable_collisions link1="base_link" link2="base_motor" reason="Adjacent" />
+    <disable_collisions link1="base_link" link2="drill_motor" reason="Never" />
+    <disable_collisions link1="base_link" link2="head_link" reason="Never" />
+    <disable_collisions link1="base_link" link2="link_02" reason="Never" />
+    <disable_collisions link1="base_motor" link2="drill_motor" reason="Never" />
+    <disable_collisions link1="base_motor" link2="head_link" reason="Never" />
+    <disable_collisions link1="base_motor" link2="link_01" reason="Adjacent" />
+    <disable_collisions link1="base_motor" link2="link_02" reason="Never" />
+    <disable_collisions link1="drill_motor" link2="head_link" reason="Adjacent" />
+    <disable_collisions link1="drill_motor" link2="link_01" reason="Never" />
+    <disable_collisions link1="drill_motor" link2="link_02" reason="Never" />
+    <disable_collisions link1="head_link" link2="link_01" reason="Never" />
+    <disable_collisions link1="head_link" link2="link_02" reason="Adjacent" />
+    <disable_collisions link1="link_01" link2="link_02" reason="Adjacent" />
+</robot>

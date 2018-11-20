@@ -3,12 +3,12 @@
 <!--                rviz.launch               -->
 <!-- This documnent describes the rviz launch --> 
 <!--    Machenical Practice Testing Version   -->
-<!--         Last editted: 10/27, 2018        -->
+<!--         Last editted: 11/18, 2018        -->
 <!--             Editor: Wolf Chen            -->
 
 <launch>
 
-  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find arm_description)/urdf/arm.xacro'"/>
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find arm_description)/urdf/arm.urdf.xacro'"/>
 
   <!-- Combine joint values -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>

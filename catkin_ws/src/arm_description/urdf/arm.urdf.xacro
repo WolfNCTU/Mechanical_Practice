@@ -1,0 +1,214 @@
+<?xml version="1.0" ?>
+
+<!--             arm.urdf.xacro              -->
+<!-- This document describes the robot model -->
+<!--   Machenical Practice Testing Version   -->
+<!--        Last editted: 11/18, 2018        -->
+<!--            Editor: Wolf Chen            -->
+
+<robot name="arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- BGN - Include -->
+  <xacro:include filename="$(find arm_description)/urdf/links_joints.xacro"/>
+  <xacro:include filename="$(find arm_description)/urdf/robot_parameters.xacro"/>
+  <!-- END - Include -->   
+
+  <!-- BGN - Robot Description -->
+
+  <!-- Body -->
+  <arm_cylinder name="${l0b}"
+                mass="${base_mass}"
+                origin_rpy="0 0 0" origin_xyz="0 0 ${base_z}"
+                ixx="1" ixy="0" ixz="0"
+                iyy="1" iyz="0"
+                izz="1"
+                radius="${base_r}" length="${base_l}"
+                color_name="LightGrey" color="${LGrey}"/>
+
+  <arm_joint name="base_joint" type="revolute"
+             axis_xyz="0 0 1"
+             limit="1.57"
+             origin_rpy="0 0 0" origin_xyz="0 0 ${base_l}"
+             parent="${l0b}"
+             child="${m0b}"/>
+
+  <arm_box name="${m0b}"
+           mass="${basem_mass}"
+           origin_rpy="0 0 0" origin_xyz="0 0 ${basem_z}"
+           ixx="1" ixy="0" ixz="0"
+           iyy="1" iyz="0"
+           izz="1"
+           size="${basem_w} ${basem_l} ${basem_h}"
+           color_name="LightGrey" color="${LGrey}"/>
+
+  <arm_joint name="shoulder_joint" type="revolute"
+             axis_xyz="0 1 0"
+             limit="1.57"
+             origin_rpy="0 0 0" origin_xyz="0 0 ${basem_h}"
+             parent="${m0b}"
+             child="${l01}"/>
+
+  <arm_box name="${l01}"
+           mass="${body_mass}"
+           origin_rpy="0 0 0" origin_xyz="0 0 ${body_z}"
+           ixx="1" ixy="0" ixz="0"
+           iyy="1" iyz="0"
+           izz="1"
+           size="${body_w} ${body_l} ${body_h}"
+           color_name="LightGrey" color="${LGrey}"/>
+
+  <arm_joint name="elbow_joint" type="revolute"
+             axis_xyz="0 1 0"
+             limit="1.57"
+             origin_rpy="0 0 0" origin_xyz="0 0 ${body_h}"
+             parent="${l01}"
+             child="${l02}"/>
+
+  <arm_box name="${l02}"
+           mass="${body_mass}"
+           origin_rpy="0 0 0" origin_xyz="0 0 ${body_z}"
+           ixx="1" ixy="0" ixz="0"
+           iyy="1" iyz="0"
+           izz="1"
+           size="${body_w} ${body_l} ${body_h}"
+           color_name="LightGrey" color="${LGrey}"/>
+
+  <arm_joint name="wrist_joint" type="revolute"
+             axis_xyz="0 1 0"
+             limit="0.785"
+             origin_rpy="0 1.57 0" origin_xyz="0 0 ${body_h}"
+             parent="${l02}"
+             child="${l0h}"/>
+
+  <arm_box name="${l0h}"
+           mass="${head_mass}"
+           origin_rpy="0 0 0" origin_xyz="${head_x} ${head_y} ${head_z}"
+           ixx="1" ixy="0" ixz="0"
+           iyy="1" iyz="0"
+           izz="1"
+           size="${head_w} ${head_l} ${head_h}"
+           color_name="LightGreyTransparent" color="${LGrey_T}"/>
+
+  <!-- End Effector - Telescopic Head -->
+  <arm_joint_dl name="drill_motor_joint" type="prismatic"
+                axis_xyz="0 0 1"
+                lower="0.00" upper="0.47"
+                origin_rpy="0 0 0" origin_xyz="${drillm_x} ${drillm_y} ${drillm_z}"
+                parent="${l0h}"
+                child="${m0d}"/>
+
+  <arm_cylinder name="${m0d}"
+                mass="${drillm_mass}"
+                origin_rpy="0 0 0" origin_xyz="0 0 0"
+                ixx="1" ixy="0" ixz="0"
+                iyy="1" iyz="0"
+                izz="1"
+                radius="${drillm_r}" length="${drillm_l}"
+                color_name="LightGrey" color="${LGrey}"/>
+
+  <arm_joint_con name="drill_motor_axis_joint"
+                 axis_xyz="0 0 1"
+                 origin_rpy="0 0 0" origin_xyz="0 0 ${drillm_zz}"
+                 parent="${m0d}"
+                 child="${edma}"/>
+
+  <arm_cylinder name="${edma}"
+                mass="${drillma_mass}"
+                origin_rpy="0 0 0" origin_xyz="0 0 ${drillma_z}"
+                ixx="1" ixy="0" ixz="0"
+                iyy="1" iyz="0"
+                izz="1"
+                radius="${drillma_r}" length="${drillma_l}"
+                color_name="LightGrey" color="${LGrey}"/>
+
+  <!-- End Effector - Alternative Head -->
+  <arm_joint name="turntable_joint" type="revolute"
+             axis_xyz="0 0 1"
+             limit="0.785"
+             origin_rpy="0 0 0" origin_xyz="${TT_x} ${TT_y} ${TT_z}"
+             parent="${l0h}"
+             child="${e0t}"/>
+
+  <arm_cylinder name="${e0t}"
+                mass="${TT_mass}"
+                origin_rpy="0 0 0" origin_xyz="0 0 0"
+                ixx="1" ixy="0" ixz="0"
+                iyy="1" iyz="0"
+                izz="1"
+                radius="${TT_r}" length="${TT_l}"
+                color_name="Black" color="${Black}"/>
+
+  <arm_joint_dl name="big_drill_joint" type="prismatic"
+                axis_xyz="0 0 1"
+                lower="0.00" upper="0.43"
+                origin_rpy="0 0 0" origin_xyz="${drillb_x} 0 ${tool_z}"
+                parent="${e0t}"
+                child="${e0db}"/>
+
+  <arm_cylinder name="${e0db}"
+                mass="${drillb_mass}"
+                origin_rpy="0 0 0" origin_xyz="0 0 ${drillb_z}"
+                ixx="1" ixy="0" ixz="0"
+                iyy="1" iyz="0"
+                izz="1"
+                radius="${drillb_r}" length="${drillb_l}"
+                color_name="LightGrey" color="${LGrey}"/>
+
+  <arm_joint_dl name="small_drill_joint" type="prismatic"
+                axis_xyz="0 0 1"
+                lower="0.00" upper="0.43"
+                origin_rpy="0 0 0" origin_xyz="${drills_x} ${drills_y} ${tool_z}"
+                parent="${e0t}"
+                child="${e0ds}"/>
+
+  <arm_cylinder name="${e0ds}"
+                mass="${drills_mass}"
+                origin_rpy="0 0 0" origin_xyz="0 0 ${drills_z}"
+                ixx="1" ixy="0" ixz="0"
+                iyy="1" iyz="0"
+                izz="1"
+                radius="${drills_r}" length="${drills_l}"
+                color_name="LightGrey" color="${LGrey}"/>
+
+  <arm_joint_dl name="screwdriver_joint" type="prismatic"
+                axis_xyz="0 0 1"
+                lower="0.00" upper="0.43"
+                origin_rpy="0 0 0" origin_xyz="${SD_x} ${SD_y} ${tool_z}"
+                parent="${e0t}"
+                child="${e0sd}"/>
+
+  <arm_cylinder name="${e0sd}"
+                mass="${SD_mass}"
+                origin_rpy="0 0 0" origin_xyz="0 0 ${SD_z}"
+                ixx="1" ixy="0" ixz="0"
+                iyy="1" iyz="0"
+                izz="1"
+                radius="${SD_r}" length="${SD_l}"
+                color_name="LightGrey" color="${LGrey}"/>
+
+  <!-- End Effector - Ending Tube -->
+  <joint name="ending_tube_position_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="${ET_x} ${ET_y} ${ET_z}"/>
+    <parent link="${l0h}"/>
+    <child link="${e0e}"/>
+  </joint>
+
+  <arm_cylinder name="${e0e}"
+                mass="${ET_mass}"
+                origin_rpy="0 0 0" origin_xyz="0 0 ${ET_zz}"
+                ixx="1" ixy="0" ixz="0"
+                iyy="1" iyz="0"
+                izz="1"
+                radius="${ET_r}" length="${ET_l}"
+                color_name="LightGrey" color="${LGrey}"/>
+
+  <!-- END - Robot Description -->
+
+  <gazebo>
+    <plugin name="ros_control" filename="libgazebo_ros_control.so">
+      <!--robotNamespace>/</robotNamespace-->
+      <!--robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType-->
+    </plugin>
+  </gazebo>
+
+</robot>
