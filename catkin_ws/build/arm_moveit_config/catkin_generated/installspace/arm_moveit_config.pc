@@ -2,7 +2,7 @@ prefix=/home/wolf/Mechanical_Practice/catkin_ws/install
 
 Name: arm_moveit_config
 Description: Description of arm_moveit_config
-Version: 0.0.0
+Version: 0.3.0
 Cflags: 
 Libs: -L/home/wolf/Mechanical_Practice/catkin_ws/install/lib 
 Requires: 

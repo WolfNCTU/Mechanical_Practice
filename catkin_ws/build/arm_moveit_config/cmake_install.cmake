@@ -47,3 +47,11 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_moveit_config" TYPE FILE FILES "/home/wolf/Mechanical_Practice/catkin_ws/src/arm_moveit_config/package.xml")
 endif()
 
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_moveit_config" TYPE DIRECTORY FILES "/home/wolf/Mechanical_Practice/catkin_ws/src/arm_moveit_config/launch" REGEX "/setup\\_assistant\\.launch$" EXCLUDE)
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_moveit_config" TYPE DIRECTORY FILES "/home/wolf/Mechanical_Practice/catkin_ws/src/arm_moveit_config/config")
+endif()
+
