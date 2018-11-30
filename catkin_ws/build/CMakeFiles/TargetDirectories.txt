@@ -174,6 +174,13 @@
 /home/wolf/Mechanical_Practice/catkin_ws/build/arduino_communication/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir
 /home/wolf/Mechanical_Practice/catkin_ws/build/arduino_communication/CMakeFiles/std_msgs_generate_messages_py.dir
 /home/wolf/Mechanical_Practice/catkin_ws/build/arduino_communication/CMakeFiles/rosgraph_msgs_generate_messages_py.dir
+/home/wolf/Mechanical_Practice/catkin_ws/build/arm2_description/CMakeFiles/list_install_components.dir
+/home/wolf/Mechanical_Practice/catkin_ws/build/arm2_description/CMakeFiles/install.dir
+/home/wolf/Mechanical_Practice/catkin_ws/build/arm2_description/CMakeFiles/rebuild_cache.dir
+/home/wolf/Mechanical_Practice/catkin_ws/build/arm2_description/CMakeFiles/install/strip.dir
+/home/wolf/Mechanical_Practice/catkin_ws/build/arm2_description/CMakeFiles/install/local.dir
+/home/wolf/Mechanical_Practice/catkin_ws/build/arm2_description/CMakeFiles/test.dir
+/home/wolf/Mechanical_Practice/catkin_ws/build/arm2_description/CMakeFiles/edit_cache.dir
 /home/wolf/Mechanical_Practice/catkin_ws/build/rosserial/rosserial_server/CMakeFiles/install.dir
 /home/wolf/Mechanical_Practice/catkin_ws/build/rosserial/rosserial_server/CMakeFiles/rebuild_cache.dir
 /home/wolf/Mechanical_Practice/catkin_ws/build/rosserial/rosserial_server/CMakeFiles/edit_cache.dir
