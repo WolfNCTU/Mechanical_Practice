@@ -326,6 +326,18 @@ arm2_description_BINARY_DIR:STATIC=/home/wolf/Mechanical_Practice/catkin_ws/buil
 arm2_description_SOURCE_DIR:STATIC=/home/wolf/Mechanical_Practice/catkin_ws/src/arm2_description
 
 //Value Computed by CMake
+arm2_moveit_config_BINARY_DIR:STATIC=/home/wolf/Mechanical_Practice/catkin_ws/build/arm2_moveit_config
+
+//Value Computed by CMake
+arm2_moveit_config_SOURCE_DIR:STATIC=/home/wolf/Mechanical_Practice/catkin_ws/src/arm2_moveit_config
+
+//Value Computed by CMake
+arm2_test_moveit_config_BINARY_DIR:STATIC=/home/wolf/Mechanical_Practice/catkin_ws/build/arm2_test_moveit_config
+
+//Value Computed by CMake
+arm2_test_moveit_config_SOURCE_DIR:STATIC=/home/wolf/Mechanical_Practice/catkin_ws/src/arm2_test_moveit_config
+
+//Value Computed by CMake
 arm_description_BINARY_DIR:STATIC=/home/wolf/Mechanical_Practice/catkin_ws/build/arm_description
 
 //Value Computed by CMake
@@ -336,6 +348,12 @@ arm_ikfast_arm_plugin_BINARY_DIR:STATIC=/home/wolf/Mechanical_Practice/catkin_ws
 
 //Value Computed by CMake
 arm_ikfast_arm_plugin_SOURCE_DIR:STATIC=/home/wolf/Mechanical_Practice/catkin_ws/src/arm_ikfast_arm_plugin
+
+//Value Computed by CMake
+arm_moveit_BINARY_DIR:STATIC=/home/wolf/Mechanical_Practice/catkin_ws/build/arm_moveit
+
+//Value Computed by CMake
+arm_moveit_SOURCE_DIR:STATIC=/home/wolf/Mechanical_Practice/catkin_ws/src/arm_moveit
 
 //Value Computed by CMake
 arm_moveit_config_BINARY_DIR:STATIC=/home/wolf/Mechanical_Practice/catkin_ws/build/arm_moveit_config
@@ -361,6 +379,12 @@ controller_manager_msgs_DIR:PATH=/opt/ros/kinetic/share/controller_manager_msgs/
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/kinetic/share/cpp_common/cmake
 
+//The directory containing a CMake configuration file for eigen_conversions.
+eigen_conversions_DIR:PATH=/opt/ros/kinetic/share/eigen_conversions/cmake
+
+//The directory containing a CMake configuration file for eigen_stl_containers.
+eigen_stl_containers_DIR:PATH=/opt/ros/kinetic/share/eigen_stl_containers/cmake
+
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/kinetic/share/gencpp/cmake
 
@@ -379,6 +403,9 @@ gennodejs_DIR:PATH=/opt/ros/kinetic/share/gennodejs/cmake
 //The directory containing a CMake configuration file for genpy.
 genpy_DIR:PATH=/opt/ros/kinetic/share/genpy/cmake
 
+//The directory containing a CMake configuration file for geometric_shapes.
+geometric_shapes_DIR:PATH=/opt/ros/kinetic/share/geometric_shapes/cmake
+
 //The directory containing a CMake configuration file for geometry_msgs.
 geometry_msgs_DIR:PATH=/opt/ros/kinetic/share/geometry_msgs/cmake
 
@@ -396,6 +423,9 @@ gmock_build_tests:BOOL=OFF
 
 //Dependencies for the target
 gmock_main_LIB_DEPENDS:STATIC=general;-lpthread;
+
+//The directory containing a CMake configuration file for graph_msgs.
+graph_msgs_DIR:PATH=/opt/ros/kinetic/share/graph_msgs/cmake
 
 //Value Computed by CMake
 gtest_BINARY_DIR:STATIC=/home/wolf/Mechanical_Practice/catkin_ws/build/gtest/gtest
@@ -425,8 +455,14 @@ gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 //The directory containing a CMake configuration file for hardware_interface.
 hardware_interface_DIR:PATH=/opt/ros/kinetic/share/hardware_interface/cmake
 
+//The directory containing a CMake configuration file for image_transport.
+image_transport_DIR:PATH=/opt/ros/kinetic/share/image_transport/cmake
+
 //The directory containing a CMake configuration file for joint_state_controller.
 joint_state_controller_DIR:PATH=/opt/ros/kinetic/share/joint_state_controller/cmake
+
+//The directory containing a CMake configuration file for kdl_conversions.
+kdl_conversions_DIR:PATH=/opt/ros/kinetic/share/kdl_conversions/cmake
 
 //The directory containing a CMake configuration file for kdl_parser.
 kdl_parser_DIR:PATH=/opt/ros/kinetic/share/kdl_parser/cmake
@@ -443,17 +479,53 @@ message_generation_DIR:PATH=/opt/ros/kinetic/share/message_generation/cmake
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/kinetic/share/message_runtime/cmake
 
+//The directory containing a CMake configuration file for moveit_core.
+moveit_core_DIR:PATH=/opt/ros/kinetic/share/moveit_core/cmake
+
 //Value Computed by CMake
 moveit_ik_plugin_pkg_BINARY_DIR:STATIC=/home/wolf/Mechanical_Practice/catkin_ws/build/moveit_ik_plugin_pkg
 
 //Value Computed by CMake
 moveit_ik_plugin_pkg_SOURCE_DIR:STATIC=/home/wolf/Mechanical_Practice/catkin_ws/src/moveit_ik_plugin_pkg
 
+//The directory containing a CMake configuration file for moveit_msgs.
+moveit_msgs_DIR:PATH=/opt/ros/kinetic/share/moveit_msgs/cmake
+
+//The directory containing a CMake configuration file for moveit_ros_manipulation.
+moveit_ros_manipulation_DIR:PATH=/opt/ros/kinetic/share/moveit_ros_manipulation/cmake
+
+//The directory containing a CMake configuration file for moveit_ros_move_group.
+moveit_ros_move_group_DIR:PATH=/opt/ros/kinetic/share/moveit_ros_move_group/cmake
+
+//The directory containing a CMake configuration file for moveit_ros_perception.
+moveit_ros_perception_DIR:PATH=/opt/ros/kinetic/share/moveit_ros_perception/cmake
+
+//The directory containing a CMake configuration file for moveit_ros_planning.
+moveit_ros_planning_DIR:PATH=/opt/ros/kinetic/share/moveit_ros_planning/cmake
+
+//The directory containing a CMake configuration file for moveit_ros_planning_interface.
+moveit_ros_planning_interface_DIR:PATH=/opt/ros/kinetic/share/moveit_ros_planning_interface/cmake
+
+//The directory containing a CMake configuration file for moveit_ros_warehouse.
+moveit_ros_warehouse_DIR:PATH=/opt/ros/kinetic/share/moveit_ros_warehouse/cmake
+
+//The directory containing a CMake configuration file for moveit_visual_tools.
+moveit_visual_tools_DIR:PATH=/opt/ros/kinetic/share/moveit_visual_tools/cmake
+
 //The directory containing a CMake configuration file for nav_msgs.
 nav_msgs_DIR:PATH=/opt/ros/kinetic/share/nav_msgs/cmake
 
+//The directory containing a CMake configuration file for object_recognition_msgs.
+object_recognition_msgs_DIR:PATH=/opt/ros/kinetic/share/object_recognition_msgs/cmake
+
+//The directory containing a CMake configuration file for octomap_msgs.
+octomap_msgs_DIR:PATH=/opt/ros/kinetic/share/octomap_msgs/cmake
+
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/kinetic/share/pluginlib/cmake
+
+//The directory containing a CMake configuration file for random_numbers.
+random_numbers_DIR:PATH=/opt/ros/kinetic/share/random_numbers/cmake
 
 //The directory containing a CMake configuration file for realtime_tools.
 realtime_tools_DIR:PATH=/opt/ros/kinetic/share/realtime_tools/cmake
@@ -596,8 +668,17 @@ rostest_DIR:PATH=/opt/ros/kinetic/share/rostest/cmake
 //The directory containing a CMake configuration file for rostime.
 rostime_DIR:PATH=/opt/ros/kinetic/share/rostime/cmake
 
+//The directory containing a CMake configuration file for rviz_visual_tools.
+rviz_visual_tools_DIR:PATH=/opt/ros/kinetic/share/rviz_visual_tools/cmake
+
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/kinetic/share/sensor_msgs/cmake
+
+//The directory containing a CMake configuration file for shape_msgs.
+shape_msgs_DIR:PATH=/opt/ros/kinetic/share/shape_msgs/cmake
+
+//The directory containing a CMake configuration file for srdfdom.
+srdfdom_DIR:PATH=/opt/ros/kinetic/share/srdfdom/cmake
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/kinetic/share/std_msgs/cmake
@@ -620,11 +701,26 @@ tf2_ros_DIR:PATH=/opt/ros/kinetic/share/tf2_ros/cmake
 //The directory containing a CMake configuration file for tf.
 tf_DIR:PATH=/opt/ros/kinetic/share/tf/cmake
 
+//The directory containing a CMake configuration file for tf_conversions.
+tf_conversions_DIR:PATH=/opt/ros/kinetic/share/tf_conversions/cmake
+
 //The directory containing a CMake configuration file for topic_tools.
 topic_tools_DIR:PATH=/opt/ros/kinetic/share/topic_tools/cmake
 
+//The directory containing a CMake configuration file for trajectory_msgs.
+trajectory_msgs_DIR:PATH=/opt/ros/kinetic/share/trajectory_msgs/cmake
+
 //The directory containing a CMake configuration file for urdf.
 urdf_DIR:PATH=/opt/ros/kinetic/share/urdf/cmake
+
+//The directory containing a CMake configuration file for urdfdom_py.
+urdfdom_py_DIR:PATH=/opt/ros/kinetic/share/urdfdom_py/cmake
+
+//The directory containing a CMake configuration file for visualization_msgs.
+visualization_msgs_DIR:PATH=/opt/ros/kinetic/share/visualization_msgs/cmake
+
+//The directory containing a CMake configuration file for warehouse_ros.
+warehouse_ros_DIR:PATH=/opt/ros/kinetic/share/warehouse_ros/cmake
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/kinetic/share/xmlrpcpp/cmake

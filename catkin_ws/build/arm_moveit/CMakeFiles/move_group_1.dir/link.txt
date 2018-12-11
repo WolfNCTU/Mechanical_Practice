@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/move_group_1.dir/src/move_group_interface_coor_1.cpp.o  -o /home/wolf/Mechanical_Practice/catkin_ws/devel/lib/arm_moveit/move_group_1 -rdynamic 

@@ -38,7 +38,7 @@
   <xacro:property name="body_h" value="2.15"/>
   <xacro:property name="head_w" value="1.20"/>
   <xacro:property name="head_l" value="1.36"/>
-  <xacro:property name="head_h" value="2.8"/>
+  <xacro:property name="head_h" value="2.80"/>
 
   <!-- End Effector Appearances Description -->
   <xacro:property name="screw_r" value="0.05"/>
