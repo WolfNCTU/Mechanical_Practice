@@ -33,34 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_moveit/msg" TYPE FILE FILES "/home/wolf/Mechanical_Practice/catkin_ws/src/arm_moveit/msg/ArmJointState.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/wolf/Mechanical_Practice/catkin_ws/build/arm_moveit/catkin_generated/installspace/arm_moveit.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_moveit/cmake" TYPE FILE FILES "/home/wolf/Mechanical_Practice/catkin_ws/build/arm_moveit/catkin_generated/installspace/arm_moveit-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_moveit/cmake" TYPE FILE FILES
+    "/home/wolf/Mechanical_Practice/catkin_ws/build/arm_moveit/catkin_generated/installspace/arm_moveitConfig.cmake"
+    "/home/wolf/Mechanical_Practice/catkin_ws/build/arm_moveit/catkin_generated/installspace/arm_moveitConfig-version.cmake"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/wolf/Mechanical_Practice/catkin_ws/devel/include/arm_moveit")
-endif()
-
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/wolf/Mechanical_Practice/catkin_ws/devel/share/roseus/ros/arm_moveit")
-endif()
-
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/wolf/Mechanical_Practice/catkin_ws/devel/share/common-lisp/ros/arm_moveit")
-endif()
-
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/wolf/Mechanical_Practice/catkin_ws/devel/share/gennodejs/ros/arm_moveit")
-endif()
-
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/wolf/Mechanical_Practice/catkin_ws/devel/lib/python2.7/dist-packages/arm_moveit")
-endif()
-
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/wolf/Mechanical_Practice/catkin_ws/devel/lib/python2.7/dist-packages/arm_moveit")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_moveit" TYPE FILE FILES "/home/wolf/Mechanical_Practice/catkin_ws/src/arm_moveit/package.xml")
 endif()
 

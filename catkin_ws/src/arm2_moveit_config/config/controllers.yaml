@@ -1,0 +1,6 @@
+controller_list:
+  - name: "arm"
+    action_ns: joint_trajectory_action
+    type: FollowJointTrajectory
+    joints: [base_link, shoulder_link, elbow_link, wrist_link]
+  
