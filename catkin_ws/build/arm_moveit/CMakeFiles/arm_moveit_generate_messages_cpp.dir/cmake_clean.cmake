@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/arm_moveit_generate_messages_cpp"
-  "/home/wolf/Mechanical_Practice/catkin_ws/devel/include/arm_moveit/ArmJointState.h"
+  "/home/wolf/Mechanical_Practice/catkin_ws/devel/include/arm_moveit/ArmJointState2.h"
 )
 
 # Per-language clean rules from dependency scanning.

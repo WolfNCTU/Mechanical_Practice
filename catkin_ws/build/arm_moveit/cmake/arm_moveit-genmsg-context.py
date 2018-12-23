@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/wolf/Mechanical_Practice/catkin_ws/src/arm_moveit/msg/ArmJointState.msg"
+messages_str = "/home/wolf/Mechanical_Practice/catkin_ws/src/arm_moveit/msg/ArmJointState2.msg"
 services_str = ""
 pkg_name = "arm_moveit"
 dependencies_str = "sensor_msgs;std_msgs"

@@ -33,7 +33,7 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_moveit/msg" TYPE FILE FILES "/home/wolf/Mechanical_Practice/catkin_ws/src/arm_moveit/msg/ArmJointState.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arm_moveit/msg" TYPE FILE FILES "/home/wolf/Mechanical_Practice/catkin_ws/src/arm_moveit/msg/ArmJointState2.msg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")

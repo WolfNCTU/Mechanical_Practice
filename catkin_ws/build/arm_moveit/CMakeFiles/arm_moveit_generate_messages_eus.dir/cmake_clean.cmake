@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/arm_moveit_generate_messages_eus"
-  "/home/wolf/Mechanical_Practice/catkin_ws/devel/share/roseus/ros/arm_moveit/msg/ArmJointState.l"
+  "/home/wolf/Mechanical_Practice/catkin_ws/devel/share/roseus/ros/arm_moveit/msg/ArmJointState2.l"
   "/home/wolf/Mechanical_Practice/catkin_ws/devel/share/roseus/ros/arm_moveit/manifest.l"
 )
 
