@@ -14,23 +14,21 @@
 
 (defclass arm_moveit::ArmJointState
   :super ros::object
-  :slots (_position1 _position2 _position3 _position4 _position5 ))
+  :slots (_position1 _position2 _position3 _position4 ))
 
 (defmethod arm_moveit::ArmJointState
   (:init
    (&key
-    ((:position1 __position1) 0)
-    ((:position2 __position2) 0)
-    ((:position3 __position3) 0)
-    ((:position4 __position4) 0)
-    ((:position5 __position5) 0)
+    ((:position1 __position1) 0.0)
+    ((:position2 __position2) 0.0)
+    ((:position3 __position3) 0.0)
+    ((:position4 __position4) 0.0)
     )
    (send-super :init)
-   (setq _position1 (round __position1))
-   (setq _position2 (round __position2))
-   (setq _position3 (round __position3))
-   (setq _position4 (round __position4))
-   (setq _position5 (round __position5))
+   (setq _position1 (float __position1))
+   (setq _position2 (float __position2))
+   (setq _position3 (float __position3))
+   (setq _position4 (float __position4))
    self)
   (:position1
    (&optional __position1)
@@ -44,68 +42,58 @@
   (:position4
    (&optional __position4)
    (if __position4 (setq _position4 __position4)) _position4)
-  (:position5
-   (&optional __position5)
-   (if __position5 (setq _position5 __position5)) _position5)
   (:serialization-length
    ()
    (+
-    ;; int16 _position1
-    2
-    ;; int16 _position2
-    2
-    ;; int16 _position3
-    2
-    ;; int16 _position4
-    2
-    ;; int16 _position5
-    2
+    ;; float32 _position1
+    4
+    ;; float32 _position2
+    4
+    ;; float32 _position3
+    4
+    ;; float32 _position4
+    4
     ))
   (:serialize
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
-     ;; int16 _position1
-       (write-word _position1 s)
-     ;; int16 _position2
-       (write-word _position2 s)
-     ;; int16 _position3
-       (write-word _position3 s)
-     ;; int16 _position4
-       (write-word _position4 s)
-     ;; int16 _position5
-       (write-word _position5 s)
+     ;; float32 _position1
+       (sys::poke _position1 (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _position2
+       (sys::poke _position2 (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _position3
+       (sys::poke _position3 (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _position4
+       (sys::poke _position4 (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
-   ;; int16 _position1
-     (setq _position1 (sys::peek buf ptr- :short)) (incf ptr- 2)
-   ;; int16 _position2
-     (setq _position2 (sys::peek buf ptr- :short)) (incf ptr- 2)
-   ;; int16 _position3
-     (setq _position3 (sys::peek buf ptr- :short)) (incf ptr- 2)
-   ;; int16 _position4
-     (setq _position4 (sys::peek buf ptr- :short)) (incf ptr- 2)
-   ;; int16 _position5
-     (setq _position5 (sys::peek buf ptr- :short)) (incf ptr- 2)
+   ;; float32 _position1
+     (setq _position1 (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _position2
+     (setq _position2 (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _position3
+     (setq _position3 (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _position4
+     (setq _position4 (sys::peek buf ptr- :float)) (incf ptr- 4)
    ;;
    self)
   )
 
-(setf (get arm_moveit::ArmJointState :md5sum-) "babeda779c954c66dbfb94bd3a6c398d")
+(setf (get arm_moveit::ArmJointState :md5sum-) "3610f49fa52e93e9f1d1fa85ce263838")
 (setf (get arm_moveit::ArmJointState :datatype-) "arm_moveit/ArmJointState")
 (setf (get arm_moveit::ArmJointState :definition-)
-      "int16 position1
-int16 position2
-int16 position3
-int16 position4
-int16 position5
+      "float32 position1
+float32 position2
+float32 position3
+float32 position4
 
 ")
 
 
 
-(provide :arm_moveit/ArmJointState "babeda779c954c66dbfb94bd3a6c398d")
+(provide :arm_moveit/ArmJointState "3610f49fa52e93e9f1d1fa85ce263838")
 
 

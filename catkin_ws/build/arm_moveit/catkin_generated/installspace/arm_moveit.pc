@@ -3,6 +3,6 @@ prefix=/home/wolf/Mechanical_Practice/catkin_ws/install
 Name: arm_moveit
 Description: Description of arm_moveit
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/wolf/Mechanical_Practice/catkin_ws/install/include
 Libs: -L/home/wolf/Mechanical_Practice/catkin_ws/install/lib 
-Requires: 
+Requires: moveit_core moveit_ros_planning roscpp rospy std_msgs message_runtime

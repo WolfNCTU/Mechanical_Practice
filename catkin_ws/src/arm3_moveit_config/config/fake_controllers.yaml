@@ -1,0 +1,10 @@
+controller_list:
+  - name: fake_arm_body_controller
+    joints:
+      - base_joint
+      - shoulder_joint
+      - elbow_joint
+      - wrist_joint
+  - name: fake_end_effector_controller
+    joints:
+      - end_effector_motor

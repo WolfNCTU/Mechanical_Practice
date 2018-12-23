@@ -49,38 +49,38 @@
              limit="1.57"
              origin_rpy="0 0 0" origin_xyz="0 0 ${basem_h}"
              parent="${m0b}"
-             child="${l012}"/>
+             child="${l013}"/>
 
-  <arm_box name="${l012}"
+  <arm_box name="${l013}"
            mass="${body_mass}"
-           origin_rpy="0 0 0" origin_xyz="0 0 ${body_z_2}"
+           origin_rpy="0 0 0" origin_xyz="0 0 ${body_z_3}"
            ixx="1" ixy="0" ixz="0"
            iyy="1" iyz="0"
            izz="1"
-           size="${body_w} ${body_l} ${body_h_2}"
+           size="${body_w} ${body_l} ${body_h_3}"
            color_name="LightGrey" color="${LGrey}"/>
 
   <arm_joint name="elbow_joint" type="revolute"
              axis_xyz="0 1 0"
              limit="1.57"
-             origin_rpy="0 0 0" origin_xyz="0 0 ${body_h_2}"
-             parent="${l012}"
-             child="${l022}"/>
+             origin_rpy="0 0 0" origin_xyz="0 0 ${body_h_3}"
+             parent="${l013}"
+             child="${l023}"/>
 
-  <arm_box name="${l022}"
+  <arm_box name="${l023}"
            mass="${body_mass}"
-           origin_rpy="0 0 0" origin_xyz="0 0 ${body_z_2}"
+           origin_rpy="0 0 0" origin_xyz="0 0 ${body_z_3}"
            ixx="1" ixy="0" ixz="0"
            iyy="1" iyz="0"
            izz="1"
-           size="${body_w} ${body_l} ${body_h_2}"
+           size="${body_w} ${body_l} ${body_h_3}"
            color_name="LightGrey" color="${LGrey}"/>
 
   <arm_joint name="wrist_joint" type="revolute"
              axis_xyz="0 1 0"
              limit="0.785"
-             origin_rpy="0 1.57 0" origin_xyz="0 0 ${body_h_2}"
-             parent="${l022}"
+             origin_rpy="0 1.57 0" origin_xyz="0 0 ${body_h_3}"
+             parent="${l023}"
              child="${l0h2}"/>
 
   <arm_box name="${l0h2}"

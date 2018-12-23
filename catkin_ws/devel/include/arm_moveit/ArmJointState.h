@@ -24,37 +24,32 @@ struct ArmJointState_
   typedef ArmJointState_<ContainerAllocator> Type;
 
   ArmJointState_()
-    : position1(0)
-    , position2(0)
-    , position3(0)
-    , position4(0)
-    , position5(0)  {
+    : position1(0.0)
+    , position2(0.0)
+    , position3(0.0)
+    , position4(0.0)  {
     }
   ArmJointState_(const ContainerAllocator& _alloc)
-    : position1(0)
-    , position2(0)
-    , position3(0)
-    , position4(0)
-    , position5(0)  {
+    : position1(0.0)
+    , position2(0.0)
+    , position3(0.0)
+    , position4(0.0)  {
   (void)_alloc;
     }
 
 
 
-   typedef int16_t _position1_type;
+   typedef float _position1_type;
   _position1_type position1;
 
-   typedef int16_t _position2_type;
+   typedef float _position2_type;
   _position2_type position2;
 
-   typedef int16_t _position3_type;
+   typedef float _position3_type;
   _position3_type position3;
 
-   typedef int16_t _position4_type;
+   typedef float _position4_type;
   _position4_type position4;
-
-   typedef int16_t _position5_type;
-  _position5_type position5;
 
 
 
@@ -134,12 +129,12 @@ struct MD5Sum< ::arm_moveit::ArmJointState_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "babeda779c954c66dbfb94bd3a6c398d";
+    return "3610f49fa52e93e9f1d1fa85ce263838";
   }
 
   static const char* value(const ::arm_moveit::ArmJointState_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xbabeda779c954c66ULL;
-  static const uint64_t static_value2 = 0xdbfb94bd3a6c398dULL;
+  static const uint64_t static_value1 = 0x3610f49fa52e93e9ULL;
+  static const uint64_t static_value2 = 0xf1d1fa85ce263838ULL;
 };
 
 template<class ContainerAllocator>
@@ -158,11 +153,10 @@ struct Definition< ::arm_moveit::ArmJointState_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "int16 position1\n\
-int16 position2\n\
-int16 position3\n\
-int16 position4\n\
-int16 position5\n\
+    return "float32 position1\n\
+float32 position2\n\
+float32 position3\n\
+float32 position4\n\
 ";
   }
 
@@ -185,7 +179,6 @@ namespace serialization
       stream.next(m.position2);
       stream.next(m.position3);
       stream.next(m.position4);
-      stream.next(m.position5);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -205,15 +198,13 @@ struct Printer< ::arm_moveit::ArmJointState_<ContainerAllocator> >
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::arm_moveit::ArmJointState_<ContainerAllocator>& v)
   {
     s << indent << "position1: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.position1);
+    Printer<float>::stream(s, indent + "  ", v.position1);
     s << indent << "position2: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.position2);
+    Printer<float>::stream(s, indent + "  ", v.position2);
     s << indent << "position3: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.position3);
+    Printer<float>::stream(s, indent + "  ", v.position3);
     s << indent << "position4: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.position4);
-    s << indent << "position5: ";
-    Printer<int16_t>::stream(s, indent + "  ", v.position5);
+    Printer<float>::stream(s, indent + "  ", v.position4);
   }
 };
 

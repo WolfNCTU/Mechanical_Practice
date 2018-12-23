@@ -7,6 +7,4 @@
           POSITION3
           POSITION4-VAL
           POSITION4
-          POSITION5-VAL
-          POSITION5
 ))

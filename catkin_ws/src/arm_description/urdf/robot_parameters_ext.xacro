@@ -8,6 +8,8 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+  <!-- Arm2 -->
+
   <!-- Name Description -->
   <xacro:property name="l0h2" value="head_link_2"/>
   <xacro:property name="sd02" value="small_drill_2"/>
@@ -32,5 +34,17 @@
   <xacro:property name="drills_y_2" value="0"/>
   <xacro:property name="drills_z_2" value="0.165"/>
   <xacro:property name="body_z_2" value="0.525"/>
+
+  <!-- Arm3 -->
+
+  <!-- Name Description -->
+  <xacro:property name="l013" value="link_01_3"/>
+  <xacro:property name="l023" value="link_02_3"/>
+
+  <!-- Body Appearance Description -->
+  <xacro:property name="body_h_3" value="1.15"/>
+
+  <!-- Origin Description -->
+  <xacro:property name="body_z_3" value="0.575"/>
 
 </robot>

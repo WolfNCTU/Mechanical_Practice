@@ -133,6 +133,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/wolf/Mechanical_Practice/catkin_ws/build/rosserial/rosserial_windows/cmake_install.cmake")
   include("/home/wolf/Mechanical_Practice/catkin_ws/build/arm_description/cmake_install.cmake")
   include("/home/wolf/Mechanical_Practice/catkin_ws/build/arm2_moveit_config/cmake_install.cmake")
+  include("/home/wolf/Mechanical_Practice/catkin_ws/build/arm3_moveit_config/cmake_install.cmake")
   include("/home/wolf/Mechanical_Practice/catkin_ws/build/arm_moveit_config/cmake_install.cmake")
   include("/home/wolf/Mechanical_Practice/catkin_ws/build/arm_moveit/cmake_install.cmake")
 
