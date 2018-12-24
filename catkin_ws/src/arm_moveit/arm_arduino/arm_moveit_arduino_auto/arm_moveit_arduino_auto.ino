@@ -71,8 +71,8 @@ void loop(){
       positions[i] = joint_angle[i];
     }
 
-    base.write(positions[0] + 10);
-    shoulder.write(positions[1] - 5);
+    base.write(positions[0]);
+    shoulder.write(positions[1]);
     elbow.write(positions[2]);
     wrist.write(positions[3]);
 
