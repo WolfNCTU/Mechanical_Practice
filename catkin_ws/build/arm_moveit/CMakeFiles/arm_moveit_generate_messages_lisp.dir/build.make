@@ -53,16 +53,16 @@ CMAKE_BINARY_DIR = /home/wolf/Mechanical_Practice/catkin_ws/build
 # Include the progress variables for this target.
 include arm_moveit/CMakeFiles/arm_moveit_generate_messages_lisp.dir/progress.make
 
-arm_moveit/CMakeFiles/arm_moveit_generate_messages_lisp: /home/wolf/Mechanical_Practice/catkin_ws/devel/share/common-lisp/ros/arm_moveit/msg/ArmJointState2.lisp
+arm_moveit/CMakeFiles/arm_moveit_generate_messages_lisp: /home/wolf/Mechanical_Practice/catkin_ws/devel/share/common-lisp/ros/arm_moveit/msg/ArmJointState.lisp
 
 
-/home/wolf/Mechanical_Practice/catkin_ws/devel/share/common-lisp/ros/arm_moveit/msg/ArmJointState2.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
-/home/wolf/Mechanical_Practice/catkin_ws/devel/share/common-lisp/ros/arm_moveit/msg/ArmJointState2.lisp: /home/wolf/Mechanical_Practice/catkin_ws/src/arm_moveit/msg/ArmJointState2.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wolf/Mechanical_Practice/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from arm_moveit/ArmJointState2.msg"
-	cd /home/wolf/Mechanical_Practice/catkin_ws/build/arm_moveit && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/wolf/Mechanical_Practice/catkin_ws/src/arm_moveit/msg/ArmJointState2.msg -Iarm_moveit:/home/wolf/Mechanical_Practice/catkin_ws/src/arm_moveit/msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p arm_moveit -o /home/wolf/Mechanical_Practice/catkin_ws/devel/share/common-lisp/ros/arm_moveit/msg
+/home/wolf/Mechanical_Practice/catkin_ws/devel/share/common-lisp/ros/arm_moveit/msg/ArmJointState.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
+/home/wolf/Mechanical_Practice/catkin_ws/devel/share/common-lisp/ros/arm_moveit/msg/ArmJointState.lisp: /home/wolf/Mechanical_Practice/catkin_ws/src/arm_moveit/msg/ArmJointState.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wolf/Mechanical_Practice/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from arm_moveit/ArmJointState.msg"
+	cd /home/wolf/Mechanical_Practice/catkin_ws/build/arm_moveit && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/wolf/Mechanical_Practice/catkin_ws/src/arm_moveit/msg/ArmJointState.msg -Iarm_moveit:/home/wolf/Mechanical_Practice/catkin_ws/src/arm_moveit/msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p arm_moveit -o /home/wolf/Mechanical_Practice/catkin_ws/devel/share/common-lisp/ros/arm_moveit/msg
 
 arm_moveit_generate_messages_lisp: arm_moveit/CMakeFiles/arm_moveit_generate_messages_lisp
-arm_moveit_generate_messages_lisp: /home/wolf/Mechanical_Practice/catkin_ws/devel/share/common-lisp/ros/arm_moveit/msg/ArmJointState2.lisp
+arm_moveit_generate_messages_lisp: /home/wolf/Mechanical_Practice/catkin_ws/devel/share/common-lisp/ros/arm_moveit/msg/ArmJointState.lisp
 arm_moveit_generate_messages_lisp: arm_moveit/CMakeFiles/arm_moveit_generate_messages_lisp.dir/build.make
 
 .PHONY : arm_moveit_generate_messages_lisp

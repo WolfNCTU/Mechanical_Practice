@@ -7,16 +7,16 @@ import struct
 
 
 class ArmJointState(genpy.Message):
-  _md5sum = "3610f49fa52e93e9f1d1fa85ce263838"
+  _md5sum = "b25fb6f563fe7748caa50319ae012a0f"
   _type = "arm_moveit/ArmJointState"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """float32 position1
-float32 position2
-float32 position3
-float32 position4
+  _full_text = """int16 position1
+int16 position2
+int16 position3
+int16 position4
 """
   __slots__ = ['position1','position2','position3','position4']
-  _slot_types = ['float32','float32','float32','float32']
+  _slot_types = ['int16','int16','int16','int16']
 
   def __init__(self, *args, **kwds):
     """
@@ -36,18 +36,18 @@ float32 position4
       super(ArmJointState, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
       if self.position1 is None:
-        self.position1 = 0.
+        self.position1 = 0
       if self.position2 is None:
-        self.position2 = 0.
+        self.position2 = 0
       if self.position3 is None:
-        self.position3 = 0.
+        self.position3 = 0
       if self.position4 is None:
-        self.position4 = 0.
+        self.position4 = 0
     else:
-      self.position1 = 0.
-      self.position2 = 0.
-      self.position3 = 0.
-      self.position4 = 0.
+      self.position1 = 0
+      self.position2 = 0
+      self.position3 = 0
+      self.position4 = 0
 
   def _get_types(self):
     """
@@ -62,7 +62,7 @@ float32 position4
     """
     try:
       _x = self
-      buff.write(_get_struct_4f().pack(_x.position1, _x.position2, _x.position3, _x.position4))
+      buff.write(_get_struct_4h().pack(_x.position1, _x.position2, _x.position3, _x.position4))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -75,8 +75,8 @@ float32 position4
       end = 0
       _x = self
       start = end
-      end += 16
-      (_x.position1, _x.position2, _x.position3, _x.position4,) = _get_struct_4f().unpack(str[start:end])
+      end += 8
+      (_x.position1, _x.position2, _x.position3, _x.position4,) = _get_struct_4h().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -90,7 +90,7 @@ float32 position4
     """
     try:
       _x = self
-      buff.write(_get_struct_4f().pack(_x.position1, _x.position2, _x.position3, _x.position4))
+      buff.write(_get_struct_4h().pack(_x.position1, _x.position2, _x.position3, _x.position4))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -104,8 +104,8 @@ float32 position4
       end = 0
       _x = self
       start = end
-      end += 16
-      (_x.position1, _x.position2, _x.position3, _x.position4,) = _get_struct_4f().unpack(str[start:end])
+      end += 8
+      (_x.position1, _x.position2, _x.position3, _x.position4,) = _get_struct_4h().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -114,9 +114,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_4f = None
-def _get_struct_4f():
-    global _struct_4f
-    if _struct_4f is None:
-        _struct_4f = struct.Struct("<4f")
-    return _struct_4f
+_struct_4h = None
+def _get_struct_4h():
+    global _struct_4h
+    if _struct_4h is None:
+        _struct_4h = struct.Struct("<4h")
+    return _struct_4h

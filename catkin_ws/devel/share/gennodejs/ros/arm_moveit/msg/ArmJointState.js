@@ -28,25 +28,25 @@ class ArmJointState {
         this.position1 = initObj.position1
       }
       else {
-        this.position1 = 0.0;
+        this.position1 = 0;
       }
       if (initObj.hasOwnProperty('position2')) {
         this.position2 = initObj.position2
       }
       else {
-        this.position2 = 0.0;
+        this.position2 = 0;
       }
       if (initObj.hasOwnProperty('position3')) {
         this.position3 = initObj.position3
       }
       else {
-        this.position3 = 0.0;
+        this.position3 = 0;
       }
       if (initObj.hasOwnProperty('position4')) {
         this.position4 = initObj.position4
       }
       else {
-        this.position4 = 0.0;
+        this.position4 = 0;
       }
     }
   }
@@ -54,13 +54,13 @@ class ArmJointState {
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type ArmJointState
     // Serialize message field [position1]
-    bufferOffset = _serializer.float32(obj.position1, buffer, bufferOffset);
+    bufferOffset = _serializer.int16(obj.position1, buffer, bufferOffset);
     // Serialize message field [position2]
-    bufferOffset = _serializer.float32(obj.position2, buffer, bufferOffset);
+    bufferOffset = _serializer.int16(obj.position2, buffer, bufferOffset);
     // Serialize message field [position3]
-    bufferOffset = _serializer.float32(obj.position3, buffer, bufferOffset);
+    bufferOffset = _serializer.int16(obj.position3, buffer, bufferOffset);
     // Serialize message field [position4]
-    bufferOffset = _serializer.float32(obj.position4, buffer, bufferOffset);
+    bufferOffset = _serializer.int16(obj.position4, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -69,18 +69,18 @@ class ArmJointState {
     let len;
     let data = new ArmJointState(null);
     // Deserialize message field [position1]
-    data.position1 = _deserializer.float32(buffer, bufferOffset);
+    data.position1 = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [position2]
-    data.position2 = _deserializer.float32(buffer, bufferOffset);
+    data.position2 = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [position3]
-    data.position3 = _deserializer.float32(buffer, bufferOffset);
+    data.position3 = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [position4]
-    data.position4 = _deserializer.float32(buffer, bufferOffset);
+    data.position4 = _deserializer.int16(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 16;
+    return 8;
   }
 
   static datatype() {
@@ -90,16 +90,16 @@ class ArmJointState {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '3610f49fa52e93e9f1d1fa85ce263838';
+    return 'b25fb6f563fe7748caa50319ae012a0f';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    float32 position1
-    float32 position2
-    float32 position3
-    float32 position4
+    int16 position1
+    int16 position2
+    int16 position3
+    int16 position4
     
     `;
   }
@@ -114,28 +114,28 @@ class ArmJointState {
       resolved.position1 = msg.position1;
     }
     else {
-      resolved.position1 = 0.0
+      resolved.position1 = 0
     }
 
     if (msg.position2 !== undefined) {
       resolved.position2 = msg.position2;
     }
     else {
-      resolved.position2 = 0.0
+      resolved.position2 = 0
     }
 
     if (msg.position3 !== undefined) {
       resolved.position3 = msg.position3;
     }
     else {
-      resolved.position3 = 0.0
+      resolved.position3 = 0
     }
 
     if (msg.position4 !== undefined) {
       resolved.position4 = msg.position4;
     }
     else {
-      resolved.position4 = 0.0
+      resolved.position4 = 0
     }
 
     return resolved;

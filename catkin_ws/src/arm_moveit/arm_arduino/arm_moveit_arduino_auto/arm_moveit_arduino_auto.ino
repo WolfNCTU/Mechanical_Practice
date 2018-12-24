@@ -21,7 +21,7 @@
   #include <WProgram.h>
 #endif
 
-#include <arm_moveit/ArmJointState2.h>
+#include <arm_moveit/ArmJointState.h>
 #include <Servo.h>
 #include <std_msgs/Bool.h>
 #include <math.h>
@@ -40,7 +40,7 @@ Servo shoulder;
 Servo elbow;
 Servo wrist;
 
-void arm_cb(const arm_moveit::ArmJointState2& arm_angles){
+void arm_cb(const arm_moveit::ArmJointState& arm_angles){
   joint_status = 1;
   joint_angle[0] = arm_angles.position1;
   joint_angle[2] = arm_angles.position2;
@@ -48,7 +48,7 @@ void arm_cb(const arm_moveit::ArmJointState2& arm_angles){
   joint_angle[3] = arm_angles.position4;
 }
 
-ros::Subscriber<arm_moveit::ArmJointState2> arm_sub("joint_angles", arm_cb);
+ros::Subscriber<arm_moveit::ArmJointState> arm_sub("joint_angles", arm_cb);
 
 void setup(){
   joint_status = 1;
