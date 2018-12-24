@@ -25,10 +25,10 @@ void cmd_cb(const sensor_msgs::JointState& cmd_arm){
 
   ROS_INFO_STREAM("Received /move_group/fake_controller_joint_states");
 
-  arm_angles.position1 = (int)(90 + cmd_arm.position[0] * 180 / M_PI);
-  arm_angles.position2 = (int)(90 + cmd_arm.position[1] * 180 / M_PI);
-  arm_angles.position3 = (int)(90 + cmd_arm.position[2] * 180 / M_PI);
-  arm_angles.position4 = (int)(90 + cmd_arm.position[3] * 180 / M_PI);
+  arm_angles.position1 = (int)(100 - cmd_arm.position[0] * 180 / M_PI);
+  arm_angles.position2 = (int)(87 - cmd_arm.position[1] * 180 / M_PI);
+  arm_angles.position3 = (int)(88 - cmd_arm.position[2] * 180 / M_PI);
+  arm_angles.position4 = (int)(97 - cmd_arm.position[3] * 180 / M_PI);
 
   if(count == 0){
     arm_angle[0] = cmd_arm.position[0];
